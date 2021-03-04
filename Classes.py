@@ -232,8 +232,10 @@ def new_game():
     player.ammo = 0
     player.shield = 100
     player.score = 0
-    mobs.remove()
+    for mob in mobs:
+        mob.kill()
     all_sprites.remove(mobs)
     newmob()
     for i in range(aster_count):
         newmob()
+
